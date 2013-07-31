@@ -43,6 +43,8 @@ struct TreeTraits {
     };
 
     struct Construct_cartesian_const_iterator_d {
+        typedef Cartesian_const_iterator_d result_type;
+
         Cartesian_const_iterator_d operator() (const Point_d &p) const {
             return p.cartesian_begin ();
         }
@@ -50,6 +52,10 @@ struct TreeTraits {
             return p.cartesian_end ();
         }
     };
+
+    Construct_cartesian_const_iterator_d construct_cartesian_const_iterator_d_object() const {
+       return Construct_cartesian_const_iterator_d();
+    }  
 };
 
 struct LookupResult {
