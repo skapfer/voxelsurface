@@ -8,7 +8,9 @@ http://www.boost.org/ http://www.cgal.org/
 Old CGAL has a bug which affects voxelsurface.  Just use something recent.
 https://sympa.inria.fr/sympa/arc/cgal-discuss/2010-10/msg00112.html
 
-The documentation is the sourcecode unfortunately.
+The documentation is the sourcecode unfortunately, though there is a
+quick example under directory demo/.
+
 If you need assistance using this, don't hesitate to contact me:
 Sebastian Kapfer <kapfer@ens.fr>
 
