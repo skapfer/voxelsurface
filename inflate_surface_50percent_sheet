@@ -1,0 +1,37 @@
+#!/bin/bash
+
+voxelsurface=/home/sk/spielwiese/fast_thicken/voxelsurface
+
+run () {
+    echo "$@"
+    "$@"
+}
+
+runvox () {
+    case "$inputfile" in
+    *poly.bz2)
+        run "$@" --surface <(bzcat "$inputfile")
+        ;;
+    *poly)
+        run "$@" --surface "$inputfile"
+        ;;
+    esac
+}
+
+inputfile="$1"
+shift
+
+[ -r "$inputfile" ] ||{
+    echo "input file $inputfile is not readable." >&2
+    exit 1
+}
+
+outputfile="${inputfile%.bz2}"
+outputfile="${outputfile%.poly}"
+outputfile="${outputfile}_inflated_volfrac.5.bin.bz2"
+
+for NV in "$@"; do
+    runvox $voxelsurface --discret $NV --aperiodic false \
+                --origin 0,0,0 --upper-corner 1.,1.,1. \
+                --inflated-output >(bzip2 >"$outputfile")
+done
