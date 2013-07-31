@@ -8,7 +8,7 @@ LIBRARIES = \
     -lCGAL \
     -lboost_program_options \
 
-CXXFLAGS = \
+CXXFLAGS += \
     -frounding-math \
     -fno-strict-aliasing \
     -Wall \
