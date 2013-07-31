@@ -3,10 +3,12 @@ voxelsurface
 
 voxelize triangulated surfaces
 
-You Boost need the CGAL library to compile this.
+You Boost need the CGAL library to compile this:
 http://www.boost.org/ http://www.cgal.org/
-Old CGAL has a bug which affects voxelsurface.  Just use something recent.
+
+Old CGAL has a bug which affects voxelsurface:
 https://sympa.inria.fr/sympa/arc/cgal-discuss/2010-10/msg00112.html
+Just use something recent.
 
 The documentation is the sourcecode unfortunately, though there is a
 quick example under directory demo/.
