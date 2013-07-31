@@ -1,0 +1,4 @@
+*.o
+ts.headers
+voxelsurface
+*.sw[po]
