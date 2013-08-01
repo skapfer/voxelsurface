@@ -119,7 +119,7 @@ namespace distance_map_utils {
     }
 
     template <typename PHASEMAP, typename DISTMAP>
-    void segment_by_quantile (PHASEMAP *phmap, const DISTMAP &dmap, double quantile = 0.5)
+    void segment_by_quantile (PHASEMAP *phmap, const DISTMAP &dmap, double quantile)
     {
         double q = find_quantile (dmap, quantile);
         std::cerr << "quant = " << q << "\n";
